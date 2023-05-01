@@ -18,7 +18,7 @@ public class Employee {
     }
 
     public String getKeyEmp() {
-        return firstname + " " + lastname;
+        return firstname + "  " + lastname;
     }
 
     @Override
