@@ -38,7 +38,7 @@ public class EmployeeBookImpl implements EmployeeBook {
             employees.remove(employee.getKeyEmp());
             return employee;
         }
-        throw new EmployeeNotFound("Сотрудник не найден");
+        throw new EmployeeNotFound("Сотрудник не найден ");
     }
 
     @Override
@@ -48,7 +48,7 @@ public class EmployeeBookImpl implements EmployeeBook {
         if (b) {
             return employee;
         }
-        throw new EmployeeNotFound("Сотрудник не найден");
+        throw new EmployeeNotFound("Сотрудник не найден ");
     }
 
 }
