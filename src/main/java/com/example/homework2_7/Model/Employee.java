@@ -3,10 +3,15 @@ package com.example.homework2_7.Model;
 public class Employee {
     private String firstname;
     private String lastname;
+    private double salary;
+    private int department;
 
-    public Employee(String firstname, String lastname) {
+
+    public Employee(String firstname, String lastname, double salary, int department) {
         this.firstname = firstname;
         this.lastname = lastname;
+        this.salary = salary;
+        this.department = department;
     }
 
     public String getFirstname() {
@@ -15,6 +20,14 @@ public class Employee {
 
     public String getLastname() {
         return lastname;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public int getDepartament() {
+        return department;
     }
 
     public String getKeyEmp() {
@@ -26,6 +39,9 @@ public class Employee {
         return "Employee{" +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
+                ", salary=" + salary +
+                ", department=" + department +
                 '}';
     }
 }
+
