@@ -1,5 +1,6 @@
 package com.example.homework2_7.Controller;
 
+import com.example.homework2_7.Exceptions.EmployeeNotFound;
 import com.example.homework2_7.Model.DeptEmployeeServiceImpl;
 import com.example.homework2_7.Model.Employee;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,11 +32,19 @@ public class DeptController {
 
     @GetMapping("/max-salary")
     public Employee getEmployeeMaxSalary(@RequestParam("departmentId") int department) {
-        return deptEmployeeService.getEmployeeMaxSalary(department);
+        try {
+            return deptEmployeeService.getEmployeeMaxSalary(department);
+        } catch (EmployeeNotFound exp) {
+            throw new RuntimeException(exp);
+        }
     }
 
     @GetMapping("/min-salary")
     public Employee getEmployeeMinSalary(@RequestParam("departmentId") int department) {
-        return deptEmployeeService.getEmployeeMinSalary(department);
+        try {
+            return deptEmployeeService.getEmployeeMinSalary(department);
+        } catch (EmployeeNotFound exp) {
+            throw new RuntimeException(exp);
+        }
     }
 }
